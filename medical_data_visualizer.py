@@ -7,7 +7,7 @@ import numpy as np
 df = None
 
 # 2
-df['overweight'] = None
+df['overweight'] = 0
 
 # 3
 
