@@ -3,14 +3,9 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 
-# 1
-df = None
-
-# 2
-df['overweight'] = 0
-
-# 3
-
+# Import data
+df = pd.read_csv("medical_examination.csv").head(10)
+print(df)
 
 # 4
 def draw_cat_plot():
