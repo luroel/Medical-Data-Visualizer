@@ -42,17 +42,17 @@ def draw_heat_map():
     ]
 
     # Calculate the correlation matrix
-    corr = None
+    corr = df_heat.corr(method="pearson")
 
-    # 13
-    mask = None
+    # Mask of the upper triangle
+    mask = np.triu(corr)
 
-    # 14
-    fig, ax = None
+    # Set up the matplotlib figure
+    fig, ax = plt.subplot(figsize=(12,12))
 
-    # 15
+    # heatmap with sns.heatmap()
+    sns.heatmap(corr, linewidths=1, annot=True, square=True, mask=mask, fmt=".1f", center=0.08,cbar_kws={"shrink":0.5})
 
-    # 16
     fig.savefig('heatmap.png')
     return fig
 
