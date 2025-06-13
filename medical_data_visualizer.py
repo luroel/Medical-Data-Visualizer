@@ -10,6 +10,10 @@ print(df)
 # Add overweight column
 df['overweight'] = ((df['weight'])/((df['height']/100)) ** 2).apply(lambda x:1 if x>25 else 0)
 
+# Normalize data by making 0 always good and 1 always bad. If the value of cholesterol or gluc is 1, set the value to 0. If the value is more than 1, set the value to 1
+df['cholesterol'].apply(lambda x:0 if x == 1 else 1)
+df['gluc'].apply(lambda x:0 if x == 1 else 1)
+
 # 4
 def draw_cat_plot():
     # 5
