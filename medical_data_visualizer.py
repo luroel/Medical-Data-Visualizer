@@ -14,11 +14,10 @@ df['overweight'] = ((df['weight'])/((df['height']/100)) ** 2).apply(lambda x:1 i
 df['cholesterol'].apply(lambda x:0 if x == 1 else 1)
 df['gluc'].apply(lambda x:0 if x == 1 else 1)
 
-# 4
+# Draw the Categorical Plot in the draw_cat_plot function
 def draw_cat_plot():
-    # 5
-    df_cat = None
-
+    # Create a DataFrame for the cat plot using pd.melt with values from cholesterol, gluc, smoke, alco, active, and overweight in the df_cat variable.
+    df_cat = pd.melt(df, id_vars=['cardio'], value_vars=['cholesterol', 'gluc', 'smoke', 'alco', 'active', 'overweight'])
 
     # 6
     df_cat = None
