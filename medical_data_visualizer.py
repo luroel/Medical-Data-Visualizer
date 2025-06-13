@@ -7,6 +7,9 @@ import numpy as np
 df = pd.read_csv("medical_examination.csv").head(10)
 print(df)
 
+# Add overweight column
+df['overweight'] = ((df['weight'])/((df['height']/100)) ** 2).apply(lambda x:1 if x>25 else 0)
+
 # 4
 def draw_cat_plot():
     # 5
