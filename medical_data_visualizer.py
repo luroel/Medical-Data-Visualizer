@@ -48,12 +48,13 @@ def draw_heat_map():
     mask = np.triu(corr)
 
     # Set up the matplotlib figure
-    fig, ax = plt.subplot(figsize=(12,12))
+    fig, ax = plt.subplots(figsize=(12,12))
 
     # heatmap with sns.heatmap()
-    sns.heatmap(corr, linewidths=1, annot=True, square=True, mask=mask, fmt=".1f", center=0.08,cbar_kws={"shrink":0.5})
+    sns.heatmap(corr, linewidths=1, annot=True, square=True, mask=mask, fmt=".1f", center=0.08,cbar_kws={"shrink":0.5}, ax=ax)
 
     fig.savefig('heatmap.png')
     return fig
 
 draw_cat_plot()
+draw_heat_map()
